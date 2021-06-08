@@ -242,6 +242,7 @@ p {
 
 .skillset__title {
   color: white;
+  margin-bottom: 32px;
 }
 
 .skillset__left {
@@ -251,7 +252,7 @@ p {
 }
 
 .skill {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .skill__description {
