@@ -16,20 +16,29 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// Handle scrolling when tapping on the navar menu 
-// 보통 click 을 하게 되면 옆에 event 가 같이 들어옴
+// Handle scrolling when tapping on the navar menu
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
-    
-
 // navbar menu 를 눌렀을 때 undefined 안나오게 하기
     const target = event.target;
     const link = target.dataset.link;
-
-    if (link == null){
-        return;
+    if (link == null) {
+        return; 
     }
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"}); 
+    scrollIntoView(link);
 });
+
+// Handle click on "Contact Me" button on home 
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    scrollIntoView('#contact');
+
+});
+
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+}
+
+
