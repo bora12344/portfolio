@@ -12,7 +12,7 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// Handle scrolling when tapping on the navar menu
+// Handle scrolling when tapping on the navbar menu
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (event) => {
 // navbar menu 를 눌렀을 때 undefined 안나오게 하기
@@ -21,15 +21,22 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return; 
     }
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar_toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
 });
 
 // Handle click on "Contact Me" button on home 
 const homeContactBtn = document.querySelector('.home__contact');
 homeContactBtn.addEventListener('click', () => {
     scrollIntoView('#contact');
-
 });
+
 
 // Make home slowly fade to transparent as the window scrolls down
 const home = document.querySelector('.home__container');
